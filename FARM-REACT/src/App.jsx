@@ -14,6 +14,9 @@ import LandingPage from './components/LandingPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
+import About from './pages/About';
+import Contact from './pages/Contact';
+
 
 // Buyer
 import Shop from './buyer/Shop';
@@ -28,6 +31,10 @@ import ProductList from './farmer/ProductList';
 // Admin
 import AdminDashboard from './admin/Dashboard';
 
+import RoleBasedNavbar from "./components/RoleBasedNavbar";
+
+
+
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -35,7 +42,8 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="d-flex flex-column min-vh-100 bg-light">
-          <Header setCartOpen={setCartOpen} />
+          <RoleBasedNavbar setCartOpen={setCartOpen} />
+
           <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} />
           <main className="flex-grow-1">
             <Routes>
@@ -43,6 +51,9 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+
 
               {/* BUYER */}
               <Route path="/shop" element={<ProtectedRoute role="buyer"><Shop /></ProtectedRoute>} />

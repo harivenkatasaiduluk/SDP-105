@@ -1,59 +1,49 @@
-// src/components/LandingPage.jsx
-import { Box, Typography, Button, Container, Grid, Card, CardContent } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, Store, VerifiedUser } from '@mui/icons-material';
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <Box>
-      {/* Hero Section */}
-      <Box sx={{ bgcolor: '#131921', color: 'white', py: 12, textAlign: 'center' }}>
-        <Container>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
-            Fresh from Farm to Your Door
-          </Typography>
-          <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
-            Buy & Sell Fresh Produce Directly
-          </Typography>
-          <Button component={Link} to="/register" size="large" variant="contained" sx={{ bgcolor: '#febd69', color: '#0F1111', fontWeight: 'bold', px: 4 }}>
-            Get Started
-          </Button>
-        </Container>
-      </Box>
+    <div>
+      {/* HERO SECTION */}
+      <div className="bg-light py-5 mb-5">
+        <div className="container text-center">
+          <h1 className="fw-bold text-success">Fresh Produce Directly From Farmers</h1>
+          <p className="lead mt-3">
+            Cut out middlemen. Support farmers. Get the freshest food delivered to your home.
+          </p>
+          <Link to="/shop" className="btn btn-success btn-lg px-4 mt-3">
+            Go to Shop
+          </Link>
+        </div>
+      </div>
 
-      {/* Features */}
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
-            <Card sx={{ textAlign: 'center', p: 3, height: '100%' }}>
-              <ShoppingCart sx={{ fontSize: 60, color: '#febd69', mb: 2 }} />
-              <CardContent>
-                <Typography variant="h6" gutterBottom>Shop Fresh</Typography>
-                <Typography color="text.secondary">Buy organic produce directly from farmers</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card sx={{ textAlign: 'center', p: 3, height: '100%' }}>
-              <Store sx={{ fontSize: 60, color: '#febd69', mb: 2 }} />
-              <CardContent>
-                <Typography variant="h6" gutterBottom>Sell Direct</Typography>
-                <Typography color="text.secondary">Farmers list products, earn more</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card sx={{ textAlign: 'center', p: 3, height: '100%' }}>
-              <VerifiedUser sx={{ fontSize: 60, color: '#febd69', mb: 2 }} />
-              <CardContent>
-                <Typography variant="h6" gutterBottom>Trusted</Typography>
-                <Typography color="text.secondary">Admin verified products only</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+      {/* FEATURES */}
+      <div className="container text-center mb-5">
+        <h2 className="fw-bold text-success mb-4">Why FarmerMart?</h2>
+        <div className="row">
+          <div className="col-md-4 mb-4">
+            <h4>💰 Fair Prices</h4>
+            <p>Farmers earn more, customers pay less.</p>
+          </div>
+          <div className="col-md-4 mb-4">
+            <h4>🌾 Fresh & Organic</h4>
+            <p>Straight from the fields to your doorstep.</p>
+          </div>
+          <div className="col-md-4 mb-4">
+            <h4>🔒 Secure Orders</h4>
+            <p>Safe and reliable buying experience.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA SECTION */}
+      <div className="bg-success text-white text-center py-5">
+        <h3 className="fw-bold">Are you a Farmer?</h3>
+        <p className="lead">Join us and sell your crops directly to customers.</p>
+        <Link to="/register" className="btn btn-light btn-lg px-4">
+          Register Now
+        </Link>
+      </div>
+    </div>
   );
 };
 
