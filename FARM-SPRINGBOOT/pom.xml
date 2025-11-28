@@ -28,6 +28,7 @@
 		<url/>
 	</scm>
 	<properties>
+	<package>jar</package>
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
